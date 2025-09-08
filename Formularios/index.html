@@ -21,8 +21,10 @@
     <input type="button" value = "Agregar producto" onclick="">
     <div class="contenedor_formulario_producto_nuevo">
         <form id="formulario_producto_nuevo">
-            <!--label for="Imagen"></label>
-            <input type="file" name="Imagen" id="imagen_producto"-->
+
+            <img id="imagen-file" class="imagen-previsualizacion" src="recursos/default-image.jpg" alt="">
+            <label for="Imagen"></label>
+            <input type="file" name="Imagen" id="imagen_producto" onchange="obtenerImagen(event)">
 
             <label for="Nombre">Nombre</label>
             <input type="text" name="Nombre" id="nombre_producto">
