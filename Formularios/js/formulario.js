@@ -53,3 +53,6 @@ function obtenerImagen(event){
         lector.readAsDataURL(file);
     }
 }
+
+//UTILIZAR LA FUNCION PARA CREAR LA TARJERTA PERO CON LOS DATOS QUE INGRESE EL USUARIO EN LA PARTE DE FORMULARIO
+

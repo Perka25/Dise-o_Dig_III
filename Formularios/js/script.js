@@ -32,7 +32,7 @@ function CrearImagen(event) {
 
         tarj.classList.add("tar");
 
-        imagen.src = "../recursos/logo-top-5.png";
+        imagen.src = "recursos/logo-top-5.png";
         imagen.classList.add("elementoImagen");
 
         titulo.classList.add("tarTit");
