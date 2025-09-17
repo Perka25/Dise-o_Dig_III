@@ -1,44 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Formularios Dinamicos</title>
-</head>
-<body>
-    
-    <form id="formulario-dinamico" class="formulario_dinamico">
-        <label for="Cantidad">Ingrese la cantidad de elementos a crear.</label>
-        <input type="number" name="Cantidad" id="cantidad" onchange="CrearImagen(event)">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Formularios Dinammicos</title>
+    </head>
+    <body>
+        <nav class="barra-navegacion">
+            <div class="elemento-navegacion">
+                <a href="#">
+                    <span>Inicio</span>
+                </a>
+                <a href="#">
+                    <span>Categorias</span>
+                </a>
+                <a href="#">
+                    <span>Carrito de compras</span>
+                </a>
+                <a href="#">
+                    <span>Iniciar Sesion</span>
+                </a>
+                <a href="paginas/pokemones.html"><span>Pokemones</span></a>
+            </div>
+        </nav>
+
         <div id="elementos" class="elementos">
-            
+
         </div>
-    </form>
 
-    <input type="button" value="Click" onclick="">
+        <div id="contenedor_formulario_producto_nuevo"
+            class="contenedor_formulario_producto_nuevo">
+            <form id="formulario_producto_nuevo">
+                <img id="imagen-file" class="imagen-previsulizacion"
+                    src="recursos/default-image.jpg">
+                <label for="Imagen"></label>
+                <input type="file" name="Imagen" id="imagen_producto"
+                    onchange="obtenerImagen(event)">
 
-    <input type="button" value = "Agregar producto" onclick="">
-    <div class="contenedor_formulario_producto_nuevo">
-        <form id="formulario_producto_nuevo">
+                <label for="Nombre">Nombre</label>
+                <input type="text" name="Nombre" id="nombre_producto" required>
 
-            <img id="imagen-file" class="imagen-previsualizacion" src="recursos/default-image.jpg" alt="">
-            <label for="Imagen"></label>
-            <input type="file" name="Imagen" id="imagen_producto" onchange="obtenerImagen(event)">
+                <label for="Descripcion">Descripcion</label>
+                <textarea name="Descripcion" id="descripcion"
+                    required></textarea>
 
-            <label for="Nombre">Nombre</label>
-            <input type="text" name="Nombre" id="nombre_producto">
+                <label for="Precio">Precio</label>
+                <input type="number" name="Precio" id="precio" required>
+            </form>
+            <button onclick="AgregarProducto(event)">Agregar</button>
+        </div>
 
-            <label for="Descripcion">Descripción</label>
-            <textarea name="Descripcion" id="descripcion"></textarea>
-
-            <label for="Precio">Precio</label>
-            <input type="number" name="Precio" id="precio">
-        </form>
-        <button class="btn-agregar" onclick="AgregarProducto(event)">Agregar</button>
-    </div>
-
-</body>
-<script src="js/script.js"></script>
-<script src="js/formulario.js"></script>
+        <input class="boton-agregar-producto" type="button"
+            value="Agregar producto" onclick="mostrarFormularioAgregarProducto()">
+    </body>
+    <script src="js/script.js"></script>
+    <script src="js/formulario.js"></script>
+    <script src="js/fetch.js"></script>
 </html>

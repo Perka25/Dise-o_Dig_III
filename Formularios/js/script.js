@@ -1,55 +1,39 @@
 const elementos = document.querySelector("#elementos");
-const tarj = document.querySelectorAll(".tarj");
 
-
-function CrearImagen(event) {
-    /* ESTA ES UNA FORMA DE QUE APAREZCA UNA IMAGEN*/
-
-    /*const imagen = '<img src="/recursos/logo-top-5.png">';
-    elementos.innerHTML = imagen;*/
-
-    /* ESTA ES OTRA FORMA DE QUE APAREZCA UNA IMAGEN*/
-
-    /*const imagen = document.createElement("img");
-    imagen.src = "../recursos/logo-top-5.png";
-    imagen.classList.add("imagen");
-    elementos.appendChild(imagen);
-    console.log(imagen);*/
-
-    /* ESTA ES OTRAAA FORMA DE QUE APAREZCA UNA IMAGEN*/
-
+function crearimagen(event){
     console.log(event.target.value);
     elementos.innerHTML = "";
-
-    for (let i = 0; i < event.target.value; i++) {
-
-        const tarj = document.createElement("div");
+    for(let i = 0; i< event.target.value; i++){
+        const contenedor = document.createElement("div");
+        contenedor.classList.add("contenedor");
+        
         const imagen = new Image();
+        imagen.src = "https://raw.githubusercontent.com/AmancioCruz/Interfaz-Dinamica-2025/refs/heads/main/Formularios/recursos/pikachu.jpg";
+        imagen.classList.add("imagen-nueva");
+        
         const titulo = document.createElement("h2");
-        const text = document.createElement("p");
+        titulo.textContent = imagen.src.substring(imagen.src.lastIndexOf('/')+1);
+        
+        const texto = document.createElement("p");
+        texto.textContent = `Lorem ipsum dolor sit amet, 
+        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`
+        
         const boton = document.createElement("button");
+        boton.textContent = `Leer mas`
 
-
-        tarj.classList.add("tar");
-
-        imagen.src = "recursos/logo-top-5.png";
-        imagen.classList.add("elementoImagen");
-
-        titulo.classList.add("tarTit");
-        titulo.textContent = "TOP";
-        text.classList.add("tarTex");
-        text.textContent = "Twenty One Pilots";
-        boton.classList.add("tarBot");
-        boton.textContent = "Más";
-
-        elementos.appendChild(tarj);
-        tarj.appendChild(imagen);
-        tarj.appendChild(titulo);
-        tarj.appendChild(text);
-        tarj.appendChild(boton);
-
-
-
+        contenedor.appendChild(imagen);
+        contenedor.appendChild(titulo);
+        contenedor.appendChild(texto);
+        contenedor.appendChild(boton);
+        elementos.appendChild(contenedor);
     }
+    /*
+    const imagen = `<img src="recursos/pikachu.jpg"></img>`;
+    elementos.innerHTML = imagen;*/
 
+    /*const imagen = document.createElement("img");
+    imagen.src = "../recursos/pikachu.jpg";
+    imagen.classList.add("imagen-nueva");
+    elementos.appendChild(imagen);
+    console.log(imagen);*/
 }
